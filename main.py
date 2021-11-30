@@ -28,10 +28,6 @@ class User(db.Model):
 @app.route('/index/',methods=['POST'])
 def index():
     data = request.args.get('url')
-
-    #var = request.get_json(force=True)
-    #data = json.loads(request.data)
-    print(data)
     user=User(data)
     db.session.add(user)
     db.session.commit()
